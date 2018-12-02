@@ -1,0 +1,140 @@
+{% extends "layout.html" %}
+
+
+
+
+{% block content %}
+
+    <div class="snow-container">
+        <form action="?type=create" method="post">
+            {% csrf_token %}
+            {{ create_forms.management_form }}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-address-book" aria-hidden="true"></i>
+                    <em>待添加的路由</em>
+                    <button class="right btn btn-danger btn-xs"
+                            style="padding: 2px 8px;margin: -3px;">
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                        批量新建
+                    </button>
+                </div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <td>序号</td>
+                        <td>权限名称</td>
+                        <td>URL</td>
+                        <td>Name</td>
+                        <td>菜单管理</td>
+                        <td>根权限</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <span class="text-danger">{{ create_forms.msg }}</span>
+                    {% for form in create_forms %}
+                        <tr>
+                            <td><em>{{ forloop.counter }}</em></td>
+                            {% for filed in form %}
+                                <td>
+                                    {{ filed }}
+                                    <span class="text-danger">{{ filed.errors.0 }}</span>
+                                </td>
+                            {% endfor %}
+                        </tr>
+
+                    {% endfor %}
+
+
+                    </tbody>
+                </table>
+            </div>
+
+
+        </form>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-address-book" aria-hidden="true"></i>
+                <em>待删除的路由</em>
+            </div>
+            <table class="table">
+                <thead>
+                <tr>
+                    <td>序号</td>
+                    <td>权限名称</td>
+                    <td>URL</td>
+                    <td>名称</td>
+                    <td>操作</td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in delete_dict %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ item.title }}</td>
+                        <td>{{ item.allow_url }}</td>
+                        <td>{{ item.url_name }}</td>
+                        <td>
+                            <a style="color: #333333;" href="{% url "snow:multi_permissions_del" pk=item.id %}"><i
+                                    class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <form action="?type=update" method="post">
+            {% csrf_token %}
+            {{ update_forms.management_form }}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-address-book" aria-hidden="true"></i>
+                    <em>待更新的路由</em>
+                    <button class="right btn btn-danger btn-xs"
+                            style="padding: 2px 8px;margin: -3px;">
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                        更新
+                    </button>
+                </div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <td>序号</td>
+                        <td>权限名称</td>
+                        <td>URL</td>
+                        <td>名称</td>
+                        <td>菜单管理</td>
+                        <td>根权限</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for form in update_forms %}
+                        <tr>
+                            <td><em>{{ forloop.counter }}</em></td>
+                            {% for filed in form %}
+                                <td>
+                                    {{ filed }}
+                                    <span class="text-danger">{{ filed.errors.0 }}</span>
+                                </td>
+                            {% endfor %}
+                        </tr>
+
+                    {% endfor %}
+
+
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+
+    </div>
+
+
+
+
+
+
+
+{% endblock content %}

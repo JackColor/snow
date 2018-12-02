@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% load snow %}
+
+
+{% block content %}
+
+    <div class="snow-container">
+        <div class="alert alert-danger" role="alert">
+            <h3><em>确定删除 ？</em></h3>
+            <br>
+            <a href="{{ cancel }}" class="btn btn-success">取消</a>
+            <form method="post" style="display: inline-block">
+                <input type="submit" class="btn btn-danger" value="确定">
+            </form>
+        </div>
+    </div>
+
+
+{% endblock content %}
