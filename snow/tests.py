@@ -2,9 +2,26 @@ from django.test import TestCase
 
 # Create your tests here.
 
-from django.forms.fields import CharField
-ls = [{1: 1}, ]
 
-ls.append({2: 2})
+lis = [[12, 3, 4], [1, 2, 3]]
 
-print(ls)
+# lis2 = lis
+#
+# lis2[0].append(2)
+#
+# print(lis)
+#
+# for i in lis:
+#     i.append(2)
+#
+# print(lis)
+
+import copy
+
+lis3 = []
+
+lis3.append(copy.deepcopy(lis))
+
+lis[0][0] = 10000
+
+print(lis3)
