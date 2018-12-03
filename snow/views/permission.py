@@ -145,6 +145,14 @@ def multi_permissions_del(request, pk):
 
 
 def distribute_permissions(reuqest):
+
+    # 用户列表
+
+    all_user_list = models.UserInfo.objects.all()
+
+    all_roles_list = models.Role.objects.all()
+
+
     all_menu_list = models.Menu.objects.all().values("id", "title")
 
     all_second_menu_list = models.Permission.objects.filter(meun__isnull=False).values("id", "title", "meun_id")
