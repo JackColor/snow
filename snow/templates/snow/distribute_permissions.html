@@ -9,37 +9,20 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <i class="fa fa-address-book" aria-hidden="true"></i>
-                    <em>一级菜单</em>
-                    <a href="{% exist_url request "snow:menu_add" %}" class="right btn btn-success btn-xs"
-                       style="padding: 2px 8px;margin: -3px;">
-                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                        新建
-                    </a>
+                    <em>用户列表</em>
                 </div>
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <td>名称</td>
-                        <td>图标</td>
-                        <td>选项</td>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for item in menus %}
-                        <tr class="{% if current_id == item.pk|safe %}active{% endif %}">
-                            <td><a href="?mid={{ item.pk }}"><strong><em>{{ item.title }}</em></strong></a></td>
 
-                            <td><i class="fa {{ item.icon }}" aria-hidden="true"></i></td>
-                            <td>
-                                <a style="color: #333333;" href="{% exist_url request "snow:menu_edit" pk=item.id %}">
-                                    <i class="fa fa-edit" aria-hidden="true"></i></a> |
-                                <a style="color: #333333;" href="{% exist_url request "snow:menu_del" pk=item.id %}">
-                                    <i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
+                <div class="panel-body">
+
+                    body
+                </div>
+
+                       <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>
+
             </div>
 
         </div>
@@ -50,45 +33,24 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <i class="fa fa-address-book" aria-hidden="true"></i>
-                        <em>二级菜单</em>
-
-                        {% if current_id %}
-                            <a href="{% exist_url request "snow:next_menu_add" first_id=current_id %}"
-                               class="right btn btn-success btn-xs"
-                               style="padding: 2px 8px;margin: -3px;">
-                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                新建
-                            </a>
-                        {% endif %}
+                        <em>角色列表</em>
+                    </div>
+                    <div class="panel-body">
+                        body
                     </div>
                     <table class="table">
                         <thead>
                         <tr class="text-danger">
-                            <td>名称</td>
-                            <td>NAME & URL</td>
-                            <td>选项</td>
+                            <td>角色名称</td>
+                            <td>操作</td>
+
                         </tr>
                         </thead>
                         <tbody>
-                        {% for item in second_menus %}
-                            <tr class="{% if cid == item.pk|safe %}active{% endif %}">
-                                <td rowspan="2"><a
-                                        href="?mid={{ current_id }}&cid={{ item.pk }}"><strong><em>{{ item.title }}</em></strong></a>
-                                </td>
-                                <td>{{ item.url_name }}</td>
-                                <td>
-                                    <a style="color: #333333;"
-                                       href="{% exist_url request "snow:next_menu_edit" pk=item.id %}">
-                                        <i class="fa fa-edit" aria-hidden="true"></i></a> |
-                                    <a style="color: #333333;"
-                                       href="{% exist_url request "snow:next_menu_del" pk=item.id %}">
-                                        <i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                </td>
-                            </tr>
-                            <tr class="{% if cid == item.pk|safe %}active{% endif %}">
-                                <td colspan="2" style="border-top: 0">{{ item.allow_url }}</td>
-                            </tr>
-                        {% endfor %}
+                        <tr>
+                            <td>VTO</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
@@ -102,48 +64,9 @@
                         <i class="fa fa-address-book" aria-hidden="true"></i>
                         <em>三级菜单</em>
 
-                        {% if cid %}
-                            <a href="{% exist_url request "snow:multi_permissions" %}" class="right btn btn-success btn-xs" style="padding: 2px 8px;margin: -3px;">
-                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                批量操作
-                            </a>
-                            <a href="{% exist_url request "snow:last_menu_add" last_id=cid %}"
-                               class="right btn btn-success btn-xs"
-                               style="padding: 2px 8px;margin: -3px;">
-                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                新建
-                            </a>
-                        {% endif %}
+
                     </div>
-                    <table class="table">
-                        <thead>
-                        <tr class="text-danger">
-                            <td>名称</td>
-                            <td>NAME & URL</td>
-                            <td>选项</td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for item in last_menus %}
-                            <tr>
-                                <td rowspan="2"><strong><em>{{ item.title }}</em></strong>
-                                </td>
-                                <td>{{ item.url_name }}</td>
-                                <td>
-                                    <a style="color: #333333;"
-                                       href="{% exist_url request "snow:last_menu_edit" pk=item.pk %}">
-                                        <i class="fa fa-edit" aria-hidden="true"></i></a> |
-                                    <a style="color: #333333;"
-                                       href="{% exist_url request "snow:last_menu_del" pk=item.pk %}">
-                                        <i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" style="border-top: 0">{{ item.allow_url }}</td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
+
                 </div>
             </div>
 

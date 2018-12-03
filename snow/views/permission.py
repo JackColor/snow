@@ -170,6 +170,4 @@ def distribute_permissions(reuqest):
             continue
         all_second_menu_dict[pid]["children"].append(row)
 
-
-    from django.shortcuts import HttpResponse
-    return HttpResponse("ok")
+    return render(reuqest, "snow/distribute_permissions.html")
