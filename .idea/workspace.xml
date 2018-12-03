@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="06091746-bb26-4904-81aa-207cbc1f0838" name="Default" comment="" />
+    <list default="true" id="06091746-bb26-4904-81aa-207cbc1f0838" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snow/templates/snow/body.html" beforeDir="false" afterPath="$PROJECT_DIR$/snow/templates/snow/body.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snow/templates/snow/multi_permisson.html" beforeDir="false" afterPath="$PROJECT_DIR$/snow/templates/snow/multi_permisson.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snow/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/snow/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snow/views/permission.py" beforeDir="false" afterPath="$PROJECT_DIR$/snow/views/permission.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,36 +59,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="menu.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/snow/views/menu.py">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webdemo/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="permission.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/snow/views/permission.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="139" column="25" selection-start-line="139" selection-start-column="4" selection-end-line="139" selection-end-column="25" />
+            <state relative-caret-position="105">
+              <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
               <folding>
-                <element signature="e#104#139#0" expanded="true" />
-                <element signature="e#445#4814#0" />
-                <element signature="e#1313#2297#0" />
-                <element signature="e#2473#3430#0" />
-                <element signature="e#2961#3161#0" />
+                <element signature="e#0#32#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="snow_permission" pinned="false" current-in-tab="false">
-        <entry file="das://0bcae5b5-d5f8-4d51-8fb6-342b45b9ba34/schema/main/table/snow_permission">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -88,10 +74,23 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/snow/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="31" column="11" lean-forward="true" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="40" />
+            <state relative-caret-position="541">
+              <caret line="35" column="42" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="permission.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/snow/views/permission.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="163" column="29" lean-forward="true" selection-start-line="163" selection-start-column="29" selection-end-line="163" selection-end-column="38" />
+              <folding>
+                <element signature="e#104#139#0" expanded="true" />
+                <element signature="e#546#5047#0" />
               </folding>
             </state>
           </provider>
@@ -109,44 +108,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customer.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webdemo/views/customer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="body.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/snow/templates/snow/body.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="82" column="17" selection-start-line="82" selection-start-column="17" selection-end-line="84" selection-end-column="92" />
-              <folding>
-                <element signature="n#for#0;n#!!top" />
-                <element signature="n#if#0;n#!!top" />
-                <element signature="n#if#1;n#!!top" />
-                <element signature="n#if#2;n#!!top" />
-                <element signature="n#if#3;n#!!top" />
-                <element signature="n#if#4;n#!!top" />
-                <element signature="n#for#2;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="multi_permisson.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="multi_permisson.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/snow/templates/snow/multi_permisson.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="76" column="28" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
+            <state relative-caret-position="135">
+              <caret line="33" column="52" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="52" />
               <folding>
-                <element signature="e#94#1713#0#HTML" />
-                <element signature="e#2573#2596#0#HTML" expanded="true" />
-                <element signature="e#2888#4281#0#HTML" />
-                <element signature="e#3391#4249#0#HTML" />
+                <element signature="e#505#543#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="snow_permission" pinned="false" current-in-tab="false">
+        <entry file="das://0bcae5b5-d5f8-4d51-8fb6-342b45b9ba34/schema/main/table/snow_permission">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -165,7 +143,11 @@
     <findStrings>
       <find>list_display</find>
       <find>widget_attrs</find>
+      <find>utils</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/snow/views/permission.py" root0="FORCE_HIGHLIGHTING" />
@@ -173,7 +155,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/webdemo/forms/customer.py" />
         <option value="$PROJECT_DIR$/webdemo/forms/payment.py" />
         <option value="$PROJECT_DIR$/webdemo/views/customer.py" />
         <option value="$PROJECT_DIR$/webdemo/views/payment.py" />
@@ -207,12 +188,9 @@
         <option value="$PROJECT_DIR$/snow/tests.py" />
         <option value="$USER_HOME$/Library/Python/3.6/lib/python/site-packages/django/forms/models.py" />
         <option value="$PROJECT_DIR$/snow/forms/basefrom.py" />
-        <option value="$PROJECT_DIR$/snow/templates/snow/body.html" />
         <option value="$PROJECT_DIR$/snow/commons/validate.py" />
         <option value="$PROJECT_DIR$/webdemo/templates/layout.html" />
         <option value="$PROJECT_DIR$/snower/settings.py" />
-        <option value="$PROJECT_DIR$/snow/views/menu.py" />
-        <option value="$PROJECT_DIR$/webdemo/urls.py" />
         <option value="$PROJECT_DIR$/snow/forms/permission.py" />
         <option value="$PROJECT_DIR$/snow/commons/reverse.py" />
         <option value="$USER_HOME$/Library/Python/3.6/lib/python/site-packages/django/urls/conf.py" />
@@ -221,9 +199,13 @@
         <option value="$USER_HOME$/Library/Python/3.6/lib/python/site-packages/django/urls/resolvers.py" />
         <option value="$PROJECT_DIR$/snow/commons/discovery.py" />
         <option value="$PROJECT_DIR$/snow/models.py" />
-        <option value="$PROJECT_DIR$/snow/views/permission.py" />
-        <option value="$PROJECT_DIR$/snow/urls.py" />
+        <option value="$PROJECT_DIR$/snow/views/menu.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/snow/templates/snow/body.html" />
+        <option value="$PROJECT_DIR$/webdemo/urls.py" />
         <option value="$PROJECT_DIR$/snow/templates/snow/multi_permisson.html" />
+        <option value="$PROJECT_DIR$/snow/urls.py" />
+        <option value="$PROJECT_DIR$/snow/views/permission.py" />
       </list>
     </option>
   </component>
@@ -236,13 +218,17 @@
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="724" />
+    <option name="height" value="730" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -259,12 +245,6 @@
               <item name="snower" type="b2602c69:ProjectViewProjectNode" />
               <item name="snower" type="462c0819:PsiDirectoryNode" />
               <item name="snow" type="462c0819:PsiDirectoryNode" />
-              <item name="commons" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="snower" type="b2602c69:ProjectViewProjectNode" />
-              <item name="snower" type="462c0819:PsiDirectoryNode" />
-              <item name="snow" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -273,12 +253,6 @@
               <item name="snow" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="snow" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="snower" type="b2602c69:ProjectViewProjectNode" />
-              <item name="snower" type="462c0819:PsiDirectoryNode" />
-              <item name="snow" type="462c0819:PsiDirectoryNode" />
-              <item name="templatetags" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="snower" type="b2602c69:ProjectViewProjectNode" />
@@ -295,74 +269,10 @@
               <item name="snower" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
-            <path>
-              <item name="snower" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="snower" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="snower" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
-              <item name="django" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="snower" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
-              <item name="django" type="462c0819:PsiDirectoryNode" />
-              <item name="http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="snower" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
-              <item name="django" type="462c0819:PsiDirectoryNode" />
-              <item name="middleware" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="snower" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
-              <item name="django" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="snower" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="snower" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
-              <item name="django" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="snower" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
-              <item name="django" type="462c0819:PsiDirectoryNode" />
-              <item name="urls" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -492,15 +402,14 @@
       <window_info anchor="bottom" id="TODO" order="14" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.15811966" />
-      <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="4" weight="0.2885246" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.23076923" />
+      <window_info anchor="bottom" id="Version Control" order="2" />
+      <window_info anchor="bottom" id="Python Console" order="3" weight="0.32905984" />
+      <window_info anchor="bottom" id="Terminal" order="4" weight="0.034768213" />
       <window_info anchor="bottom" id="Database Console" order="8" weight="0.012820513" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49860725" visible="true" weight="0.1930533" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49860725" visible="true" weight="0.10177706" />
       <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="0" weight="0.32956383" />
-      <window_info anchor="bottom" id="manage.py@snower" order="7" weight="0.42165244" />
+      <window_info active="true" anchor="right" id="Database" order="0" visible="true" weight="0.12358643" />
       <window_info anchor="right" id="SciView" order="1" weight="0.32956383" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="11" weight="0.32786885" />
@@ -509,34 +418,35 @@
       <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="manage.py@snower" order="7" weight="0.42165244" />
       <window_info anchor="bottom" id="Message" order="9" />
       <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="10" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49860725" visible="true" weight="0.22617124" />
       <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
-      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="14" visible="true" weight="0.2735043" />
       <window_info anchor="right" id="SciView" order="1" weight="0.32956383" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="13" />
-      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="14" visible="true" weight="0.2735043" />
+      <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
+      <window_info anchor="bottom" id="manage.py@snower" order="6" weight="0.091803275" />
+      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="9" />
-      <window_info anchor="bottom" id="Python Console" order="3" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49860725" visible="true" weight="0.22617124" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.32786885" />
-      <window_info anchor="right" id="Database" order="0" weight="0.18174475" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.2885246" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info anchor="bottom" id="manage.py@snower" order="6" weight="0.091803275" />
+      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
+      <window_info id="Favorites" order="0" sideWeight="0.5013928" side_tool="true" weight="0.17528272" />
       <window_info active="true" anchor="bottom" id="Database Console" order="7" visible="true" weight="0.012820513" />
       <window_info anchor="bottom" id="Message" order="8" />
-      <window_info id="Favorites" order="0" sideWeight="0.5013928" side_tool="true" weight="0.17528272" />
+      <window_info anchor="right" id="Database" order="0" weight="0.18174475" />
+      <window_info anchor="bottom" id="Python Console" order="3" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,17 +461,23 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webdemo/templates/payment_add.html">
+    <entry file="file://$PROJECT_DIR$/webdemo/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="16" lean-forward="true" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="30" />
+        <state relative-caret-position="42">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webdemo/templates/payment_edit.html">
+    <entry file="file://$PROJECT_DIR$/snow/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+        <state relative-caret-position="42">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -620,25 +536,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Library/Python/3.6/lib/python/site-packages/django/forms/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="225" column="38" selection-start-line="225" selection-start-column="31" selection-end-line="225" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Python/3.6/lib/python/site-packages/django/http/response.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="281" column="8" selection-start-line="281" selection-start-column="8" selection-end-line="281" selection-end-column="8" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webdemo/static/imgs/luffy.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webdemo/static/imgs/snow.jpg">
-      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$USER_HOME$/Library/Python/3.6/lib/python/site-packages/django/core/management/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -675,9 +578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/snower/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
@@ -692,18 +592,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/snow/templates/snow/meun.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/snow/views/roles.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snow/templates/snow/delete.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/collections/__init__.pyi">
       <provider selected="true" editor-type-id="text-editor">
@@ -767,11 +661,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="484" column="23" selection-start-line="484" selection-start-column="20" selection-end-line="484" selection-end-column="23" />
-          <folding>
-            <element signature="e#99#123#0" expanded="true" />
-            <element signature="e#269#1839#0" />
-            <element signature="e#1840#1901#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -813,16 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webdemo/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.1/python_stubs/-2010535109/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
@@ -841,16 +720,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="943" column="8" selection-start-line="943" selection-start-column="8" selection-end-line="943" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snow/commons/reverse.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#102#133#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -873,28 +742,81 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/snow/views/menu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-906">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snow/commons/reverse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding>
+            <element signature="e#102#133#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="168" selection-start-line="168" selection-end-line="168" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Python/3.6/lib/python/site-packages/django/forms/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-78">
+          <caret line="855" column="30" selection-start-line="855" selection-start-column="25" selection-end-line="855" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snow/templates/snow/body.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="98" column="32" selection-start-line="98" selection-start-column="32" selection-end-line="98" selection-end-column="32" />
+          <folding>
+            <element signature="e#128#1924#0#HTML" />
+            <element signature="n#for#0;n#!!top" />
+            <element signature="n#if#0;n#!!top" />
+            <element signature="e#2000#4496#0#HTML" />
+            <element signature="n#if#1;n#!!top" />
+            <element signature="n#if#2;n#!!top" />
+            <element signature="n#if#3;n#!!top" />
+            <element signature="e#5087#5125#0#HTML" expanded="true" />
+            <element signature="n#for#2;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webdemo/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snow/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="35" column="42" selection-start-line="35" selection-start-column="42" selection-end-line="35" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/snow/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snow/templates/snow/body.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="82" column="17" selection-start-line="82" selection-start-column="17" selection-end-line="84" selection-end-column="92" />
-          <folding>
-            <element signature="n#for#0;n#!!top" />
-            <element signature="n#if#0;n#!!top" />
-            <element signature="n#if#1;n#!!top" />
-            <element signature="n#if#2;n#!!top" />
-            <element signature="n#if#3;n#!!top" />
-            <element signature="n#if#4;n#!!top" />
-            <element signature="n#for#2;n#!!top" />
           </folding>
         </state>
       </provider>
@@ -906,46 +828,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/snow/views/menu.py">
+    <entry file="file://$PROJECT_DIR$/snow/templates/snow/multi_permisson.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="52" />
+        <state relative-caret-position="135">
+          <caret line="33" column="52" selection-start-line="33" selection-start-column="52" selection-end-line="33" selection-end-column="52" />
+          <folding>
+            <element signature="e#505#543#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/snow/views/permission.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="139" column="25" selection-start-line="139" selection-start-column="4" selection-end-line="139" selection-end-column="25" />
+        <state relative-caret-position="168">
+          <caret line="163" column="29" lean-forward="true" selection-start-line="163" selection-start-column="29" selection-end-line="163" selection-end-column="38" />
           <folding>
             <element signature="e#104#139#0" expanded="true" />
-            <element signature="e#445#4814#0" />
-            <element signature="e#1313#2297#0" />
-            <element signature="e#2473#3430#0" />
-            <element signature="e#2961#3161#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snow/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="31" column="11" lean-forward="true" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snow/templates/snow/multi_permisson.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="76" column="28" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
-          <folding>
-            <element signature="e#94#1713#0#HTML" />
-            <element signature="e#2573#2596#0#HTML" expanded="true" />
-            <element signature="e#2888#4281#0#HTML" />
-            <element signature="e#3391#4249#0#HTML" />
+            <element signature="e#546#5047#0" />
           </folding>
         </state>
       </provider>

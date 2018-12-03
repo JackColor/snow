@@ -24,7 +24,6 @@ def multi_permissions(request):
     }
 
 
-
     :param request:
     :return:
     """
@@ -54,7 +53,7 @@ def multi_permissions(request):
                 try:
                     models.Permission.objects.bulk_create(permission_obj_list, batch_size=100)
                 except IntegrityError:
-                    create_forms.msg = "请检查名称是否规范"
+                    create_forms.msg = "<em>请检查名称是否规范</em>"
                 else:
                     create_forms = None
     # 批量更新
@@ -143,3 +142,34 @@ def multi_permissions_del(request, pk):
         return render(request, "snow/delete.html", {"cancel": url})
     models.Permission.objects.filter(pk=pk).delete()
     return redirect(url)
+
+
+def distribute_permissions(reuqest):
+    all_menu_list = models.Menu.objects.all().values("id", "title")
+
+    all_second_menu_list = models.Permission.objects.filter(meun__isnull=False).values("id", "title", "meun_id")
+
+    all_permission_list = models.Permission.objects.filter(meun__isnull=True).values("id", "title", "pid_id")
+
+    all_menu_dict = {}
+
+    all_second_menu_dict = {}
+    for item in all_menu_list:
+        item["children"] = []
+        all_menu_dict[item["id"]] = item
+
+    for row in all_second_menu_list:
+        meun_id = row["meun_id"]
+        row["children"] = []
+        all_second_menu_dict[row["id"]] = row
+        all_menu_dict[meun_id]["children"].append(row)
+
+    for row in all_permission_list:
+        pid = row["pid_id"]
+        if not pid:
+            continue
+        all_second_menu_dict[pid]["children"].append(row)
+
+
+    from django.shortcuts import HttpResponse
+    return HttpResponse("ok")

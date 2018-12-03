@@ -26,9 +26,11 @@ urlpatterns = [
     url(r'^last_menu/edit/(?P<pk>\d+)/$', menu.last_menu_edit, name="last_menu_edit"),
     url(r'^last_menu/del/(?P<pk>\d+)/$', menu.last_menu_del, name="last_menu_del"),
 
-
     # 发现路由 路由操作
     url(r'^discovery/url/$', permission.multi_permissions, name="multi_permissions"),
     url(r'^discovery/url/del/(?P<pk>\d+)$', permission.multi_permissions_del, name="multi_permissions_del"),
+
+    # 权限分配
+    url(r'^distribute/permission/$', permission.distribute_permissions, name="distribute_permissions"),
 
 ]
