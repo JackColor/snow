@@ -1,155 +1,270 @@
 {% extends "layout.html" %}
 {% load snow %}
 
+{% block css %}
+
+    <style>
+
+        td {
+            font-size: 12px;
+        }
+
+        .role-area tr td a {
+            display: block;
+        }
+
+        .role-area tr.active {
+            background-color: #f1f7fd;
+            border-left: 3px solid #fdc00f;
+        }
+
+        .permission-area tr.root {
+            background-color: #f1f7fd;
+            cursor: pointer;
+        }
+
+        .permission-area tr.root td i {
+            margin: 3px;
+        }
+
+        .permission-area .node {
+
+        }
+
+        .permission-area .node input[type='checkbox'] {
+            margin: 0 5px;
+        }
+
+        .permission-area .node .parent {
+            padding: 5px 0;
+        }
+
+        .permission-area .node label {
+            font-weight: normal;
+            margin-bottom: 0;
+            font-size: 12px;
+        }
+
+        .permission-area .node .children {
+            padding: 0 0 0 20px;
+        }
+
+        .permission-area .node .children .child {
+            display: inline-block;
+            margin: 2px 5px;
+        }
+
+        table {
+            font-size: 12px;
+        }
+
+        .panel-body {
+            font-size: 12px;
+        }
+
+        .panel-body .form-control {
+            font-size: 12px;
+        }
+    </style>
+
+
+{% endblock css %}
 
 {% block content %}
     <div class="snow-container">
         {# 一级菜单   #}
         <div class="col-md-3">
-            <div class="panel panel-default">
+            <div class="panel panel-default permission">
                 <div class="panel-heading">
                     <i class="fa fa-address-book" aria-hidden="true"></i>
-                    <em>一级菜单</em>
-                    <a href="{% exist_url request "snow:menu_add" %}" class="right btn btn-success btn-xs"
-                       style="padding: 2px 8px;margin: -3px;">
-                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                        新建
-                    </a>
+                    <em>用户列表</em>
                 </div>
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <td>名称</td>
-                        <td>图标</td>
-                        <td>选项</td>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for item in menus %}
-                        <tr class="{% if current_id == item.pk|safe %}active{% endif %}">
-                            <td><a href="?mid={{ item.pk }}"><strong><em>{{ item.title }}</em></strong></a></td>
 
-                            <td><i class="fa {{ item.icon }}" aria-hidden="true"></i></td>
-                            <td>
-                                <a style="color: #333333;" href="{% exist_url request "snow:menu_edit" pk=item.id %}">
-                                    <i class="fa fa-edit" aria-hidden="true"></i></a> |
-                                <a style="color: #333333;" href="{% exist_url request "snow:menu_del" pk=item.id %}">
-                                    <i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                            </td>
-                        </tr>
+                <div class="panel-body">
+                    <em>所有用户信息展示,选择用户查看权限信息</em>
+                </div>
+                <ul>
+                    {% for user in all_user_list %}
+                        <li><a style="font-weight: 800;color: {% if uid == user.pk|safe %} red {% endif %}"
+                               href="?uid={{ user.pk }}">{{ user.username }}</a>
+                        </li>
                     {% endfor %}
-                    </tbody>
-                </table>
+                </ul>
             </div>
-
         </div>
-
-        <div class="snow-container">
-            {# 二级菜单   #}
-            <div class="col-md-4">
+    </div>
+    <div class="snow-container">
+        {# 二级菜单   #}
+        <form method="post">
+            {% csrf_token %}
+            <div class="col-md-3">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <i class="fa fa-address-book" aria-hidden="true"></i>
-                        <em>二级菜单</em>
+                        <em>角色列表</em>
 
-                        {% if current_id %}
-                            <a href="{% exist_url request "snow:next_menu_add" first_id=current_id %}"
-                               class="right btn btn-success btn-xs"
-                               style="padding: 2px 8px;margin: -3px;">
-                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                新建
-                            </a>
+                        {% if uid %}
+                            <button
+                                    class="right btn btn-success btn-xs"
+                                    style="padding: 2px 8px;margin: -3px;">
+                                <i class="fa fa-save" aria-hidden="true"></i>
+                                保存
+                            </button>
+                            <input type="hidden" name="type" value="roles">
                         {% endif %}
+
+                    </div>
+                    <div class="panel-body">
+                        <em>所有角色信息展示,选择角色才能更改角色对应权限</em>
                     </div>
                     <table class="table">
                         <thead>
                         <tr class="text-danger">
-                            <td>名称</td>
-                            <td>NAME & URL</td>
-                            <td>选项</td>
+                            <td>角色名称</td>
+                            <td>操作</td>
                         </tr>
                         </thead>
                         <tbody>
-                        {% for item in second_menus %}
-                            <tr class="{% if cid == item.pk|safe %}active{% endif %}">
-                                <td rowspan="2"><a
-                                        href="?mid={{ current_id }}&cid={{ item.pk }}"><strong><em>{{ item.title }}</em></strong></a>
+                        {% for row in all_roles_list %}
+                            <tr class="{% if rid == row.pk|safe %} active{% endif %}">
+                                {% if uid %}
+                                    <td><a style="color: {% if rid == row.pk|safe %} red {% endif %}"
+                                           href="?uid={{ uid }}&rid={{ row.id }}">{{ row.title }}</a></td>
+                                {% else %}
+                                    <td><a style="color: {% if rid == row.pk|safe %} red {% endif %}"
+                                           href="?rid={{ row.id }}">{{ row.title }}</a></td>
+                                {% endif %}
+
+                                <td><input name="roles" value="{{ row.pk }}" type="checkbox"
+                                        {% if row.id in user_roles_id_dict %} checked {% endif %}>
                                 </td>
-                                <td>{{ item.url_name }}</td>
-                                <td>
-                                    <a style="color: #333333;"
-                                       href="{% exist_url request "snow:next_menu_edit" pk=item.id %}">
-                                        <i class="fa fa-edit" aria-hidden="true"></i></a> |
-                                    <a style="color: #333333;"
-                                       href="{% exist_url request "snow:next_menu_del" pk=item.id %}">
-                                        <i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                </td>
-                            </tr>
-                            <tr class="{% if cid == item.pk|safe %}active{% endif %}">
-                                <td colspan="2" style="border-top: 0">{{ item.allow_url }}</td>
                             </tr>
                         {% endfor %}
                         </tbody>
                     </table>
                 </div>
             </div>
-        </div>
-        <div>
-            {# 三级级菜单   #}
-            <div class="col-md-5">
+        </form>
+    </div>
+
+    <div>
+        {# 三级级菜单   #}
+        <form method="post">
+            {% csrf_token %}
+            <div class="col-md-6 permission-area">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <i class="fa fa-address-book" aria-hidden="true"></i>
                         <em>三级菜单</em>
-
-                        {% if cid %}
-                            <a href="{% exist_url request "snow:multi_permissions" %}" class="right btn btn-success btn-xs" style="padding: 2px 8px;margin: -3px;">
-                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                批量操作
-                            </a>
-                            <a href="{% exist_url request "snow:last_menu_add" last_id=cid %}"
-                               class="right btn btn-success btn-xs"
-                               style="padding: 2px 8px;margin: -3px;">
-                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                新建
-                            </a>
+                        {% if rid %}
+                            <button
+                                    class="right btn btn-success btn-xs"
+                                    style="padding: 2px 8px;margin: -3px;">
+                                <i class="fa fa-save" aria-hidden="true"></i>
+                                保存
+                            </button>
+                            <input type="hidden" value="permission" name="type">
                         {% endif %}
                     </div>
+
+                    <div class="panel-body">
+                        body
+                    </div>
                     <table class="table">
-                        <thead>
-                        <tr class="text-danger">
-                            <td>名称</td>
-                            <td>NAME & URL</td>
-                            <td>选项</td>
-                        </tr>
-                        </thead>
                         <tbody>
-                        {% for item in last_menus %}
-                            <tr>
-                                <td rowspan="2"><strong><em>{{ item.title }}</em></strong>
+                        {% for item in all_menu_list %}
+                            <tr class="root">
+                                <td><i class="fa fa-caret-down" aria-hidden="true"></i>{{ item.title }}
+                                <span class="pull-right"><input type="checkbox" class="checkall"> 全选</span>
                                 </td>
-                                <td>{{ item.url_name }}</td>
-                                <td>
-                                    <a style="color: #333333;"
-                                       href="{% exist_url request "snow:last_menu_edit" pk=item.pk %}">
-                                        <i class="fa fa-edit" aria-hidden="true"></i></a> |
-                                    <a style="color: #333333;"
-                                       href="{% exist_url request "snow:last_menu_del" pk=item.pk %}">
-                                        <i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                </td>
+
+
                             </tr>
-                            <tr>
-                                <td colspan="2" style="border-top: 0">{{ item.allow_url }}</td>
+                            <tr class="node">
+                                <td>
+                                    {% for node in item.children %}
+                                        <div class="parent">
+                                            {% if node.id in permissions_id_dict %}
+                                                <input id="permission_{{ node.id }}" name="permissions"
+                                                       value="{{ node.id }}" type="checkbox" checked>
+                                            {% else %}
+                                                <input id="permission_{{ node.id }}" name="permissions"
+                                                       value="{{ node.id }}" type="checkbox">
+                                            {% endif %}
+
+                                            {% if forloop.parentloop.last %}
+                                                <label for="permission_{{ node.id }}">{{ node.title }}</label>
+                                            {% else %}
+                                                <label for="permission_{{ node.id }}">{{ node.title }}（菜单）</label>
+                                            {% endif %}
+                                        </div>
+                                        <div class="children">
+                                            {% for child in node.children %}
+                                                <div class="child">
+                                                    {% if child.id in permissions_id_dict %}
+                                                        <input id="permission_{{ child.id }}" name="permissions"
+                                                               type="checkbox" value="{{ child.id }}" checked>
+                                                    {% else %}
+                                                        <input id="permission_{{ child.id }}" name="permissions"
+                                                               type="checkbox" value="{{ child.id }}">
+                                                    {% endif %}
+
+                                                    <label for="permission_{{ child.id }}">{{ child.title }}</label>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    {% endfor %}
+                                </td>
                             </tr>
                         {% endfor %}
                         </tbody>
                     </table>
+
+
                 </div>
             </div>
-
-
-        </div>
-
-
+        </form>
     </div>
+
+
+
 {% endblock content %}
+
+
+
+{% block js %}
+
+
+    <script>
+        $(function () {
+            bindRootPermissionClick();
+            //SelectAllCheckBox()
+        });
+        function bindRootPermissionClick() {
+            $('.permission-area').on('click', '.root', function () {
+                var caret = $(this).find('i');
+                if (caret.hasClass('fa-caret-right')) {
+                    caret.removeClass('fa-caret-right').addClass('fa-caret-down');
+                    $(this).next().removeClass('hide');
+                } else {
+                    caret.removeClass('fa-caret-down').addClass('fa-caret-right');
+                    $(this).next().addClass('hide');
+
+                }
+            })
+        }
+        
+        
+        //function SelectAllCheckBox() {
+         //       $(".checkall").parents(".root").next(".node").children("td").prop("checked","checked")
+            
+            
+            
+            
+            
+       // }
+        
+        
+        
+    </script>
+{% endblock %}

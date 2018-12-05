@@ -42,7 +42,6 @@ def init_permission(user: UserInfo, request):
                     "children": [node, ]
                 }
 
-    # print("---->", permission_url_dict)
     request.session[settings.PERMISSION_KEY] = permission_url_dict
 
     request.session[settings.MENU_KEY] = menu_dict

@@ -23,9 +23,12 @@
                 <tr>
                     <td>{{ row.id }}</td>
                     <td>{{ row.title }}</td>
-                    <td>编辑 | 删除</td>
-
-
+                    <td>
+                        <a style="color: #333333;" href="{% url "snow:role_edit" pk=row.pk %}">
+                            <i class="fa fa-edit" aria-hidden="true"></i></a> |
+                        <a style="color: #333333;" href="{% url "snow:role_del" pk=row.pk %}">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>

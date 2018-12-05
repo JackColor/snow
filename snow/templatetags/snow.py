@@ -14,10 +14,8 @@ register = Library()
 @register.inclusion_tag("snow/meun.html")
 def menu_list(request):
     """"""
-    print(request.selected_url_id)
     menu_dict = request.session.get(settings.MENU_KEY)
     order_meun_dict = OrderedDict()
-    print(menu_dict)
     for index, item in menu_dict.items():
         item["cls"] = "hide"
         for chl in item["children"]:
@@ -26,7 +24,6 @@ def menu_list(request):
                 chl["act"] = "active"
         order_meun_dict[index] = item
 
-    print(order_meun_dict)
     return {"menu_dict": order_meun_dict, "path_info": request.path_info}
 
 

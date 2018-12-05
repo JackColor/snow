@@ -16,12 +16,12 @@ lis = [[12, 3, 4], [1, 2, 3]]
 #
 # print(lis)
 
-import copy
+user = "kkk"
 
-lis3 = []
+password = 123
 
-lis3.append(copy.deepcopy(lis))
+account_list = [("jack", 123), ("bob", 123), ()]
 
-lis[0][0] = 10000
+user_pwd = (user, password)
 
-print(lis3)
+print(user_pwd in account_list)
