@@ -47,7 +47,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # "snow.middlewares.PermissionWare",
+    "snow.middlewares.PermissionWare",
 ]
 
 ROOT_URLCONF = 'snower.urls'

@@ -23,13 +23,13 @@ def menu_list(request):
     if not current_id:
         second_menus = []
     # 三级权限表
-    last_menus = Permission.objects.filter(pid=cid)
+    last_menus = Permission.objects.filter(pid=cid, )
     if not cid:
         last_menus = []
     if not current_id:
         last_menus = []
 
-    cid = cid if Permission.objects.filter(pk=cid).exists() else None
+    cid = cid if Permission.objects.filter(pk=cid, meun_id=current_id).exists() else None
 
     return render(request, "snow/body.html", locals())
 
@@ -71,7 +71,6 @@ def menu_del(request, pk):
 
 
 def next_menu_add(request, first_id):
-    print(first_id)
     menu_obj = Menu.objects.filter(pk=first_id).first()
     if not menu_obj:
         return HttpResponse("菜单不存在 ")

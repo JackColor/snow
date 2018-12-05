@@ -4,7 +4,7 @@
 # @File    : permission.py
 from collections import OrderedDict
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.shortcuts import reverse
 from django.forms import formset_factory
 from django.db.utils import IntegrityError
@@ -44,7 +44,7 @@ def multi_permissions(request):
                 row_data = post_data[i]
                 try:
                     permission_obj = models.Permission(**row_data)
-                    permission_obj.validate_unique()  # 取数据库看有没有一样的 缺陷
+                    permission_obj.validate_unique()  #
                     permission_obj_list.append(permission_obj)
                 except Exception as e:
                     has_errors = True
@@ -53,7 +53,7 @@ def multi_permissions(request):
                 try:
                     models.Permission.objects.bulk_create(permission_obj_list, batch_size=100)
                 except IntegrityError:
-                    create_forms.msg = "<em>请检查名称是否规范</em>"
+                    create_forms.msg = "请检查名称是否规范( 名称重复 或其他 )"
                 else:
                     create_forms = None
     # 批量更新
@@ -145,23 +145,57 @@ def multi_permissions_del(request, pk):
 
 
 def distribute_permissions(reuqest):
-
     # 用户列表
+    uid = reuqest.GET.get("uid")
+    rid = reuqest.GET.get("rid")
+    user_roles_id_dict = {}
+    permissions_id_dict = {}
+    all_menu_dict = {}
+    all_second_menu_dict = {}
+    if reuqest.method == "POST" and reuqest.POST.get("type") == "roles" and uid:
+        user_obj = models.UserInfo.objects.filter(id=uid).first()
+        if not user_obj:
+            return HttpResponse("操作不正确!")  # TODO errors.html
+        roles_id = reuqest.POST.getlist("roles")
+        user_obj.roles.set(roles_id)
 
+    if reuqest.method == "POST" and reuqest.POST.get("type") == "permission" and rid:
+        role_obj = models.Role.objects.filter(pk=rid).first()  # type:models.Role
+        if not role_obj:
+            return HttpResponse("errors")
+        permissions_id = reuqest.POST.getlist("permissions")
+        role_obj.permissons.set(permissions_id)
+
+    if uid:
+        user_obj = models.UserInfo.objects.filter(id=uid).first()  # type: models.UserInfo
+        if user_obj:
+            user_roles_id_dict = {row["id"]: None for row in user_obj.roles.all().values("id")}
+            user_permissions = user_obj.roles.filter(permissons__id__isnull=False).values("permissons__id").distinct()
+            permissions_id_dict = {row["permissons__id"]: None for row in user_permissions}
+        else:
+            uid = None
+
+    if rid:
+        role = models.Role.objects.filter(id=rid)
+        if role:
+            role_permissions = role.filter(permissons__id__isnull=False).values("permissons__id").distinct()
+            permissions_id_dict = {row["permissons__id"]: None for row in role_permissions}
+        else:
+            rid = None
+
+    # 所有用户信息
     all_user_list = models.UserInfo.objects.all()
-
+    # 所有 角色信息
     all_roles_list = models.Role.objects.all()
 
-
+    # 菜单信息 用于后面的 数据结构展示
     all_menu_list = models.Menu.objects.all().values("id", "title")
 
     all_second_menu_list = models.Permission.objects.filter(meun__isnull=False).values("id", "title", "meun_id")
 
     all_permission_list = models.Permission.objects.filter(meun__isnull=True).values("id", "title", "pid_id")
 
-    all_menu_dict = {}
-
-    all_second_menu_dict = {}
+    # 构造数据结构
     for item in all_menu_list:
         item["children"] = []
         all_menu_dict[item["id"]] = item
@@ -178,4 +212,13 @@ def distribute_permissions(reuqest):
             continue
         all_second_menu_dict[pid]["children"].append(row)
 
-    return render(reuqest, "snow/distribute_permissions.html")
+    return render(reuqest, "snow/distribute_permissions.html",
+                  {"all_user_list": all_user_list,
+                   "all_menu_list": all_menu_list,
+                   "all_roles_list": all_roles_list,
+                   "user_roles_id_dict": user_roles_id_dict,
+                   "permissions_id_dict": permissions_id_dict,
+                   "rid": rid,
+                   "uid": uid,
+                   }
+                  )

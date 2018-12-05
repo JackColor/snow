@@ -31,7 +31,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <span class="text-danger font-12">{{ create_forms.msg }}</span>
+                    <span class="text-danger font-12"><em>{{ create_forms.msg }}</em></span>
                     {% for form in create_forms %}
                         <tr>
                             <td><em>{{ forloop.counter }}</em></td>
@@ -44,8 +44,6 @@
                         </tr>
 
                     {% endfor %}
-
-
                     </tbody>
                 </table>
             </div>

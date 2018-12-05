@@ -7,6 +7,8 @@ urlpatterns = [
     # role 角色
     url(r'^role/list/$', roles.role_list, name="role_list"),
     url(r'^role/add/$', roles.role_add, name="role_add"),
+    url(r'^role/edit/(?P<pk>\d+)$', roles.role_edit, name="role_edit"),
+    url(r'^role/del/(?P<pk>\d+)$', roles.role_del, name="role_del"),
 
     # menu 菜单
     url(r'^menu/list/$', menu.menu_list, name="menu_list"),
