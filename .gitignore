@@ -4,7 +4,11 @@
 __pycache__/
 *.py[cod]
 *$py.class
+<<<<<<< HEAD
 .idea/workspace.xml
+=======
+
+>>>>>>> add igron
 # C extensions
 *.so
 
@@ -165,5 +169,11 @@ fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
+<<<<<<< HEAD
 .DS_Store
 
+=======
+
+snow/utils/
+templates/
+>>>>>>> add igron
