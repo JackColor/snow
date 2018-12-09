@@ -117,7 +117,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-from django.core.files.uploadhandler import MemoryFileUploadHandler
+# from django.core.files.uploadhandler import MemoryFileUploadHandler
 
 # perminssion key
 PERMISSION_KEY = "permission_url_key"

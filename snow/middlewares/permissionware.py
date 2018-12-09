@@ -22,6 +22,8 @@ class PermissionWare(MiddlewareMixin):
             return HttpResponse("先登录，或未分配任何权限")
         flag = False
 
+        # TODO 对不同页面需要直接访问不做限制
+
         record_url = [{"title": "首页", "url": "#"}]
         for item in permission_url_dict.values():
             regx_url = '^{url}$'.format(url=item["url"])
